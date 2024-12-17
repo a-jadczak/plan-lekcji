@@ -1,0 +1,6 @@
+@PlanLekcjiAPI_HostAddress = http://localhost:5137
+
+GET {{PlanLekcjiAPI_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

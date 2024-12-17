@@ -1,0 +1,63 @@
+:root{
+    --color: rgb(126, 221, 31);
+    --head-table-color: gray;
+    --navbar-color: black;
+    --shadow-color: black;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+td .anchors-container .anchors-row,
+thead tr th .table-header-container
+{
+    display: grid;
+    grid-template-columns: auto 20% 20%;
+    gap: .1em;
+}
+
+/* DARK/LIGHT MODE*/
+.navbar {
+    background-color: var(--navbar-color) !important;
+}
+
+th {
+    background-color: var(--head-table-color) !important;
+}
+/**/
+
+.print-btn {
+    position: sticky;
+    left: 95vw;
+    bottom: 1em;
+}
+
+.link {
+    color: var(--color);
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.icon {
+    width: 1.5em;
+}
+
+.modal-list {
+    max-height: 25em;
+    overflow: auto;
+}
+.modal-list-element {
+    font-size: 1.75em;
+}
+.modal-list-element span {
+    cursor: pointer;
+}
+
+.close-btn{
+    font-size: 1.5em;
+    border: none;
+    background-color: transparent;
+}
