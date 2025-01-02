@@ -4,6 +4,7 @@ using ObjectToJSON.Classes;
 using ObjectToJSON.FileReader;
 using System.Text.Json;
 using ObjectToJSON.HTMLReader;
+using PlanLekcjiAPI.Debug;
 
 namespace PlanLekcjiAPI.ObjectToJson
 {
@@ -31,7 +32,7 @@ namespace PlanLekcjiAPI.ObjectToJson
                     scheduleHours
                 };
 
-                //// Kolumny dni tygodnia: pon, wt, śr ...
+                // Kolumny dni tygodnia: pon, wt, śr ...
                 LessonsColumn[] lessonColumns = fileLines.GetLessonColumn(id);
 
                 var week = new Week(scheduleColumns, lessonColumns);
@@ -42,27 +43,22 @@ namespace PlanLekcjiAPI.ObjectToJson
 
             LessonPlan lessonPlan = new LessonPlan(DateTime.Now, entities);
 
-            // Przypisywanie prawidłowych anchorow do nieprawidłowych anchorow nauczycieli
-            foreach (var item in LessonCell.toFixAnchorsData)
-            {
-                var fixedAnchor = lessonPlan.GetToFixTeacherAnchor(item);
+            // Proces Naprawiania zepsutyych linków
+            TeacherAnchorFixing.FixingProcess(lessonPlan);
 
-                //lessonPlan.OverrideBrokenTeacherAnchor(fixedAnchor, item);
-                lessonPlan.FixBrokenTeacherAnchor(item);
-            }
-
-
+            // Konwertowanie do JSON
             string jsonString = JsonSerializer.Serialize(lessonPlan);
-
             string jsonPath = $@"{targetPath}\data.json";
-
+            // Zapis Pliku
             File.WriteAllText(jsonPath, jsonString);
 
             // Czyszczenie obiektów i zmiennych
             files = [];
             entities.Clear();
             lessonPlan = null;
-            LessonPlan.toFixDictionary.Clear();
+
+            TeacherAnchorFixing.toFixDictionary.Clear();
+            LessonCell.toFixAnchorsData.Clear();
         }
     }
 }

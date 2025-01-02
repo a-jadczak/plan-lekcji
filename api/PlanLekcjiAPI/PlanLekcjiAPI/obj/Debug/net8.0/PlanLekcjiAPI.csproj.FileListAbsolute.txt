@@ -41,3 +41,4 @@ C:\Users\Arek\Desktop\keZ\plan-lekcji\plan-lekcji\api\PlanLekcjiAPI\PlanLekcjiAP
 C:\Users\Arek\Desktop\keZ\plan-lekcji\plan-lekcji\api\PlanLekcjiAPI\PlanLekcjiAPI\bin\Debug\net8.0\Microsoft.Extensions.Options.dll
 C:\Users\Arek\Desktop\keZ\plan-lekcji\plan-lekcji\api\PlanLekcjiAPI\PlanLekcjiAPI\bin\Debug\net8.0\Microsoft.Extensions.Primitives.dll
 C:\Users\Arek\Desktop\keZ\plan-lekcji\plan-lekcji\api\PlanLekcjiAPI\PlanLekcjiAPI\bin\Debug\net8.0\System.Diagnostics.DiagnosticSource.dll
+C:\Users\Arek\Desktop\keZ\plan-lekcji\plan-lekcji\api\PlanLekcjiAPI\PlanLekcjiAPI\obj\Debug\net8.0\PlanLekcjiAPI.sourcelink.json

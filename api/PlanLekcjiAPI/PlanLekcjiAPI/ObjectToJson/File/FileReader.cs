@@ -21,7 +21,7 @@ namespace ObjectToJSON.FileReader
                 }
                 else
                 {
-                    Console.WriteLine($"UWAGA NULL!!! {line}");
+                    Console.WriteLine($"Null {line}");
                 }
             }
 

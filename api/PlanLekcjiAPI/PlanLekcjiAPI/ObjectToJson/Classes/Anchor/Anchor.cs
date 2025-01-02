@@ -4,6 +4,7 @@ namespace ObjectToJSON.Classes.Anchors
 {
     /// <summary>
     /// Aby w UI lepiej ułożyć elementy
+    /// ("Nazwa_przedmiotu" "klasa" "sala")
     /// </summary>
     public enum AnchorType
     {
@@ -13,13 +14,13 @@ namespace ObjectToJSON.Classes.Anchors
         Classroom = 3,
     }
     /// <summary>
-    /// Przechowuje Id oraz Text
+    /// Reprezentuje link z danym tekstem i id
     /// Id - dla linku
     /// Text - Nazwa przedmiotu, sali, czy iniciał nauczyciela
     /// </summary>
     public class Anchor
     {
-        private static Dictionary<char, AnchorType> keyValuePairs = new Dictionary<char, AnchorType>()
+        private Dictionary<char, AnchorType> keyValuePairs = new Dictionary<char, AnchorType>()
         {
             { 'n', AnchorType.Teacher },
             { 'o', AnchorType.Class },
@@ -45,8 +46,6 @@ namespace ObjectToJSON.Classes.Anchors
         public string AnchorText => _anchorText;
         [JsonInclude]
         public AnchorType AnchorType => _anchorType;
-
-        public override string ToString() => $"{_anchorText} id: {_anchorId}";
 
         private AnchorType IdentifyCategory()
         {

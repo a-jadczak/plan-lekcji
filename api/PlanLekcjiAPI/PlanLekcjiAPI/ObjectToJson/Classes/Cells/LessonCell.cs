@@ -1,35 +1,10 @@
 ﻿using ObjectToJSON.Classes.Anchors;
+using PlanLekcjiAPI.Debug;
 using System;
 using System.Text.Json.Serialization;
 
 namespace ObjectToJSON.Classes.Cells
 {
-    public class ToFixAnchorData
-    {
-        private readonly string _id, _oddzialId, _brokenId;
-        private readonly int _x, _y, _indexX, _indexY;
-        public ToFixAnchorData(string id, string brokenId, string oddzialId, int x, int y, int indexX, int indexY)
-        {
-            _brokenId = brokenId;
-            _oddzialId = oddzialId;
-            _x = x;
-            _y = y;
-            _id = id;
-            _indexX = indexX;
-            _indexY = indexY;
-        }
-        public string Id => _id; // Id sali z której zczyta kto o danej godzinie ma jakiego nauczyciuela
-        public string OddzialId => _oddzialId; // Id odzialu z której napdpisze zepsute linki
-        public string BrokenId => _brokenId;
-
-        public int X => _x;
-
-        public int Y => _y;
-
-        public int IndexX => _indexX;
-
-        public int IndexY => _indexY;
-    }
     public class LessonCell
     {
         public static List<ToFixAnchorData> toFixAnchorsData = new List<ToFixAnchorData>();
@@ -109,7 +84,6 @@ namespace ObjectToJSON.Classes.Cells
 
                     yield return new AnchorsRow(anchorArr);
                 }
-                temp = 0;
             }
         }
 

@@ -19,7 +19,6 @@ namespace PlanLekcjiAPI.Controllers
         }
 
         [HttpPost("nowyPlan")]
-        //[DisableRequestSizeLimit]
         public async Task<IActionResult> UploadFile(IFormFile file)
         {
             Console.WriteLine(file.FileName);
@@ -56,15 +55,5 @@ namespace PlanLekcjiAPI.Controllers
                 Main.StartConvertingToJson(extractedPath, targetPath);
             });
         }
-
-
-
-        //[HttpGet("{entityId}")]
-        //public ActionResult<> GetPlan([FromRoute] int xd, int entityId)
-        //{
-
-        //}
-
-
     }
 }

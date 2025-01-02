@@ -2,6 +2,9 @@
 
 namespace ObjectToJSON.Classes.Anchors
 {
+    /// <summary>
+    /// Może się zdarzyć że jest podział na grupy i w jednej kolumnie mogą być kilka zajęć
+    /// </summary>
     public class AnchorsRow
     {
         private Anchor[] _anchors;

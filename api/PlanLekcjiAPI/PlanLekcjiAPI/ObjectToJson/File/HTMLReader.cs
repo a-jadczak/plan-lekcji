@@ -1,7 +1,6 @@
 ﻿using ObjectToJSON.Classes.Columns;
 using ObjectToJSON.Classes.Cells;
 using ObjectToJSON.Extensions;
-using ObjectToJSON.Classes;
 using ObjectToJSON.Classes.Anchors;
 
 namespace ObjectToJSON.HTMLReader

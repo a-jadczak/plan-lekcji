@@ -12,7 +12,7 @@ function App()
   const [setEntityCallback, setSetEntityCallback] = useState<(value: string) => void | null>(null);
 
   const handleReceiveCallback = (callback: (data: string) => void) => {
-    setSetEntityCallback(() => callback); // Przechowuje callback z C1
+    setSetEntityCallback(() => callback); // Przechowuje callback z Planu
   };
   
   useEffect(() => 

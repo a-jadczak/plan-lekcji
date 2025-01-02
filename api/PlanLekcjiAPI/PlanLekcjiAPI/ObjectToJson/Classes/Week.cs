@@ -23,7 +23,6 @@ namespace ObjectToJSON.Classes
             _scheduleColumns = scheduleColumns;
 
             _lessonCount = _lessonColumns.Sum(x => x.LessonCount);
-            Console.WriteLine($"Full Lesson count: {_lessonCount}");
         }
 
         [JsonInclude]

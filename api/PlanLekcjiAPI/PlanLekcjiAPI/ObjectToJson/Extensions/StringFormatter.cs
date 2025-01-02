@@ -13,10 +13,14 @@
             int index = text.IndexOf("-");
             string formatted = text.Insert(index, " ");
 
-            if (formatted[7] != ' ')
+            try
             {
-                formatted = formatted.Insert(7, " ");
+                if (formatted[7] != ' ')
+                {
+                    formatted = formatted.Insert(7, " ");
+                }
             }
+            catch (Exception e) { }
 
             return formatted;
         }
